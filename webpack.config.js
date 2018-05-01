@@ -67,16 +67,16 @@ module.exports = {
     ]),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
-    // new UglifyJsPlugin({ //todo add production configuration
-    //   test: /\.(js|jsx)($|\?)/i,
-    //   parallel: 4,
-    //   sourceMap: false,
-    //   uglifyOptions: {
-    //     mangle: {
-    //       keep_classnames: false,
-    //       keep_fnames: false,
-    //     }
-    //   }
-    // })
+    new UglifyJsPlugin({ //todo add production configuration
+      test: /\.(js|jsx)($|\?)/i,
+      parallel: 4,
+      sourceMap: false,
+      uglifyOptions: {
+        mangle: {
+          keep_classnames: false,
+          keep_fnames: false,
+        }
+      }
+    })
   ]
 };
