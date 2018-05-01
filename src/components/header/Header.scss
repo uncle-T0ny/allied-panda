@@ -1,0 +1,16 @@
+.Header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #BBDEFB;
+  min-height : 10vh;
+  max-height : 10vh;
+
+  &__menu {
+    background-size: cover;
+    width: 2rem;
+  }
+
+  &__text {
+  }
+}
