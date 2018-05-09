@@ -6,16 +6,16 @@ import { createStore, applyMiddleware } from 'redux';
 import { logger } from 'redux-logger';
 import { Provider, connect } from 'react-redux';
 import createSagaMiddleware from 'redux-saga';
-import { configureAnchors } from 'react-scrollable-anchor'
-
+import { configureAnchors } from 'react-scrollable-anchor';
+import { config } from './../config';
 import rootSaga from '../saga/rootSaga';
-
 import reducer from '../reducers/rootReducer';
 
 import {
   BrowserRouter as Router,
   Route
 } from 'react-router-dom';
+import Particles from 'react-particles-js';
 
 import { Body } from '../components/body/Body';
 import { Header } from '../components/header/Header';
@@ -42,6 +42,7 @@ export default class MainContainer extends PureComponent {
       <div>
         <Header/>
         <Body/>
+        <Particles className="Particles" params={config.particlesConfig} />
       </div>
     );
 

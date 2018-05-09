@@ -6,6 +6,14 @@
   width: 100%;
 }
 
+* {
+  box-sizing: border-box;
+}
+
+*, :after, :before {
+  background-repeat: no-repeat;
+}
+
 body {
   margin: 0;
 }

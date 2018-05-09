@@ -1,8 +1,11 @@
 @import "../../styles/colors";
+@import "./../../styles/variables";
+
 .Body {
   background-color: $primary-color-text;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  justify-content: center;
+
+  &__section {
+    min-height: 100vh;
+    padding-top: $header-height;
+  }
 }

@@ -1,10 +1,16 @@
+@import "../../styles/variables";
+@import "../../styles/colors";
+
 .Header {
   position: fixed;
   top: 0;
+  z-index: 3;
   width: 100%;
-  background-color: #BBDEFB;
-  min-height : 10vh;
-  max-height : 10vh;
+  min-height : $header-height;
+  max-height : $header-height;
+
+  background-color: $primary-color;
+  color: $primary-color-text;
 
   &__menu {
     background-size: cover;
