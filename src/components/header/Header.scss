@@ -1,5 +1,6 @@
 @import "../../styles/variables";
 @import "../../styles/colors";
+@import "./Header__NavIcon";
 
 .Header {
   position: fixed;
@@ -12,11 +13,15 @@
   background-color: $primary-color;
   color: $primary-color-text;
 
-  &__menu {
-    background-size: cover;
-    width: 2rem;
+  &__menuIcon {
+    max-height: $header-height;
   }
 
   &__text {
   }
+
+  &--open {
+    min-height : $header-height * 2;
+  }
 }
+
