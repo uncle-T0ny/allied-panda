@@ -21,7 +21,23 @@
   }
 
   &--open {
-    min-height : $header-height * 2;
+    min-height : $header-height * 2.5;
+
+    -webkit-transform: perspective(400) rotate3d(0, 0, 0, 0);
+    -webkit-transform-origin: 50% 50%;
+    transition: 350ms;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .Header {
+    &--open {
+      min-height : $header-height;
+    }
+
+    &__menuIcon {
+      display: none;
+    }
   }
 }
 
