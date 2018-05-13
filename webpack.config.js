@@ -6,9 +6,9 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: [
-    'react-hot-loader/patch',
-    'webpack-dev-server/client?http://localhost:5000', // WebpackDevServer host and port
-    'webpack/hot/only-dev-server',
+    // 'react-hot-loader/patch',
+    // 'webpack-dev-server/client?http://localhost:5000', // WebpackDevServer host and port
+    // 'webpack/hot/only-dev-server',
     './src/index.js'
   ],
   devtool: 'inline-source-map',
@@ -67,16 +67,16 @@ module.exports = {
     ]),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
-    // new UglifyJsPlugin({ //todo add production configuration
-    //   test: /\.(js|jsx)($|\?)/i,
-    //   parallel: 4,
-    //   sourceMap: false,
-    //   uglifyOptions: {
-    //     mangle: {
-    //       keep_classnames: false,
-    //       keep_fnames: false,
-    //     }
-    //   }
-    // })
+    new UglifyJsPlugin({ //todo add production configuration
+      test: /\.(js|jsx)($|\?)/i,
+      parallel: 4,
+      sourceMap: false,
+      uglifyOptions: {
+        mangle: {
+          keep_classnames: false,
+          keep_fnames: false,
+        }
+      }
+    })
   ]
 };
