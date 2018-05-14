@@ -26,16 +26,23 @@ import './MainContainer.scss';
 configureAnchors({offset: -60, scrollDuration: 600, keepLastAnchorHash: true});
 
 const sagaMiddleware = createSagaMiddleware();
-const store = createStore(
-  reducer,
-  applyMiddleware(sagaMiddleware, logger)
-);
+let store;
+if (process.env.NODE_ENV === 'production') {
+  store = createStore(
+    reducer,
+    applyMiddleware(sagaMiddleware)
+  );
+} else {
+  store = createStore(
+    reducer,
+    applyMiddleware(sagaMiddleware, logger)
+  );
+}
 
 sagaMiddleware.run(rootSaga);
 
 export default class MainContainer extends PureComponent {
   render() {
-
     const { } = store.getState().auth;
 
     const content = (

@@ -6,8 +6,8 @@
   "author": "",
   "license": "ISC",
   "scripts": {
-    "prod": "webpack",
-    "local": "webpack-dev-server",
+    "prod": "webpack --env prod",
+    "local": "webpack-dev-server --env local",
     "lint": "./node_modules/.bin/eslint src"
   },
   "dependencies": {
